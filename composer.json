@@ -11,6 +11,6 @@
         "doctrine/annotations": "^1.5"
     },
     "autoload": {
-        "psr-4": { "FixedWidth": "lib/FixedWidth" }
+        "psr-4": { "FixedWidth\\": "lib/FixedWidth" }
     }
 }
