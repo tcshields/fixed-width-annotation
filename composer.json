@@ -1,0 +1,16 @@
+{
+    "name": "tcshields/fixed-width-annotation",
+    "type": "library",
+    "license": "MIT",
+    "description": "FixedWidth annotation for describing, reading, and writing fixed width text files.",
+    "authors": [
+        {"name": "Tim Shields", "email": "tcshields@hotmail.com"}
+    ],
+    "require": {
+        "php": "^7.1",
+        "doctrine/annotations": "^1.5"
+    },
+    "autoload": {
+        "psr-4": { "FixedWidth": "lib/FixedWidth" }
+    }
+}
