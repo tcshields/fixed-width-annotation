@@ -21,7 +21,13 @@ use Exception;
  */
 class Parser
 {
-    const CACHE_DIR = '/tmp';
+    /**
+     * Filesystem dir to create annotation cache files. You can customize
+     * this before using the Reader or Writer:
+     * Parser::$cacheDir = '/path/to/cache';
+     * @var string
+     */
+    public static $cacheDir = '/tmp';
 
     /**
      * Collect the property level FixedWidth annotations from the specified object.
@@ -36,7 +42,7 @@ class Parser
 
         $annotations = [];
         $reflectionClass = new ReflectionClass($object);
-        $reader = new FileCacheReader(new AnnotationReader(), self::CACHE_DIR, false);
+        $reader = new FileCacheReader(new AnnotationReader(), self::$cacheDir, false);
 
         foreach ($reflectionClass->getProperties() as $property) {
             $annotation = self::mergeDefaults(
@@ -62,7 +68,7 @@ class Parser
         }
 
         $reflectionClass = new ReflectionClass($object);
-        $reader = new FileCacheReader(new AnnotationReader(), self::CACHE_DIR, false);
+        $reader = new FileCacheReader(new AnnotationReader(), self::$cacheDir, false);
 
         $annotation = $reader->getClassAnnotation($reflectionClass, FixedWidth::class);
 
