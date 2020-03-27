@@ -58,7 +58,7 @@ class MyFileRecord
 ```
 
 ### Example of writing a file
-Create an instance of an annotated object and pass it to the addRecord method of the Writer.
+Create an instance of an annotated object and pass it to the `addRecord` method of the `Writer`.
 
 ```php
 <?php
@@ -81,7 +81,7 @@ D0000000263            John Doe0327202000025.38
 ```
 
 ### Example of reading a file
-A file with the above content is read using the Reader.
+A file with the above content is read using the `Reader`.
 ```php
 <?php
 $reader = new FixedWidth\Reader();
@@ -96,7 +96,7 @@ if ('D' === $reader->getRecordIdentifier(1, 1)) {
 ```
 will output the following:
 ```sh
-object(App\Processor\Galileo\Batch\MyFileRecord)#659 (5) {
+object(MyFileRecord)#659 (5) {
   ["type"]=>
   string(1) "D"
   ["id"]=>
